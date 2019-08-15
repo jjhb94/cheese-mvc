@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/"> <!--uses xml to pull in thymleaf extension of html/xhtml -->
+<head th:replace="fragments :: head"></head>
+
+<body>
+     <h1 th:text="${title}">Default Title</h1>  <!--ALL XML must have closing tags -->
+
+     <p th:if="${cheeseDescription.isEmpty()}">no cheese :(</p>  <!--unless cheeses exists AND the list'cheese' is greater than zero print-->
+
+     <nav th:replace="fragments :: navigation "></nav>
+
+     <ol>
+          <li th:each="entry: ${cheeseDescription}">
+               <span th:text="${entry.key}"></span><span th:text="${entry.value}"></span>
+          </li> <!-- this allows us to build a thymeleaf loop-->
+     </ol>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head> <!--this is a title block head that can be reused  calling 'head' from fragments template -->
+<body>
+<h1 th:text="${title}">Default Title</h1>
+
+<nav th:replace="fragments :: navigation "></nav> <!-- this is importing the nav template called 'navigation' from the fragments template-->
+
+<form method="post">
+    <input type="text" name="cheeseName" />
+    <Input type="text" name="aboutCheese" />
+    <input type="submit" value="Add Cheese"  />
+
+</form>
+
+</body>
+</html>
